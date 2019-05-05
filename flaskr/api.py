@@ -58,7 +58,7 @@ def loadDB():
     return jsonify({'Result': "Loaded"})
 
 
-@bp.route('/timeBank-1.0/offer', methods=['GET'])
+@bp.route('/timeBank-1.0/offers', methods=['GET'])
 def getAllOffer():
     return jsonify({'offers': bp.OfferDB})
 
