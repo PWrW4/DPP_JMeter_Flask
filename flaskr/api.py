@@ -65,29 +65,35 @@ def getAllOffer():
 
 @bp.route('/timeBank-1.0/offer/<offerID>', methods=['GET'])
 def getOffer(offerID):
-    usr = [Offer for Offer in bp.OfferDB if (Offer['id'] == offerID)]
+    off = [Offer for Offer in bp.OfferDB if (Offer['id'] == offerID)]
 
-    return jsonify({'offer': usr})
+    return jsonify({'offer': off})
 
 
 @bp.route('/timeBank-1.0/offer/<offerID>', methods=['PUT'])
 def updateOffer(offerID):
-    em = [Offer for Offer in bp.OfferDB if (Offer['id'] == offerID)]
+    off = [Offer for Offer in bp.OfferDB if (Offer['id'] == offerID)]
 
     if 'name' in request.json:
-        em[0]['name'] = request.json['name']
+        off[0]['name'] = request.json['name']
 
     if 'title' in request.json:
-        em[0]['title'] = request.json['title']
+        off[0]['title'] = request.json['title']
 
     if 'dsc' in request.json:
-        em[0]['dsc'] = request.json['dsc']
+        off[0]['dsc'] = request.json['dsc']
 
-    return jsonify({'offer': em[0]})
+    return jsonify({'offer': off[0]})
 
 
 @bp.route('/timeBank-1.0/offer', methods=['POST'])
 def createOffer():
+
+    off = [Offer for Offer in bp.OfferDB if (Offer['id'] == request.json['id'])]
+
+    if len(off) != 0:
+        return jsonify({'Error': 'User with this id exists'})
+
     dat = {
 
         'id': request.json['id'],
@@ -107,11 +113,11 @@ def createOffer():
 
 @bp.route('/timeBank-1.0/offer/<offerID>', methods=['DELETE'])
 def deleteOffer(offerID):
-    em = [Offer for Offer in bp.OfferDB if (Offer['id'] == offerID)]
+    off = [Offer for Offer in bp.OfferDB if (Offer['id'] == offerID)]
 
-    if len(em) == 0:
+    if len(off) == 0:
         abort(404)
 
-    bp.OfferDB.remove(em[0])
+    bp.OfferDB.remove(off[0])
 
     return jsonify({'response': 'Success'})
