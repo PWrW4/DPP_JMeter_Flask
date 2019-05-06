@@ -53,7 +53,6 @@ def loadDB():
     except FileNotFoundError:
         return jsonify({'Result': "Error (No file found to load)"})
     bp.OfferDB = json.load(file)
-    print(bp.OfferDB)
     file.close()
     return jsonify({'Result': "Loaded"})
 
@@ -74,6 +73,12 @@ def getOffer(offerID):
 def updateOffer(offerID):
     off = [Offer for Offer in bp.OfferDB if (Offer['id'] == offerID)]
 
+    if len(off) == 0:
+        return jsonify({'Error': 'User with this id not existing'})
+
+    if 'id' in request.json:
+        off[0]['id'] = request.json['id']
+
     if 'name' in request.json:
         off[0]['name'] = request.json['name']
 
@@ -82,6 +87,9 @@ def updateOffer(offerID):
 
     if 'dsc' in request.json:
         off[0]['dsc'] = request.json['dsc']
+
+    deleteOffer(offerID)
+    bp.OfferDB.append(off[0])
 
     return jsonify({'offer': off[0]})
 
