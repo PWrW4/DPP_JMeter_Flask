@@ -22,6 +22,66 @@ bp.OfferDB = [
 
         'id': '2',
 
+        'name': 'Jerzy Knapik',
+
+        'title': 'Napiszę książkę',
+
+        'dsc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus, lectus ac maximus accumsan, nulla diam ultricies augue, nec efficitur erat enim at ipsum. Sed. '
+
+    },
+
+    {
+
+        'id': '3',
+
+        'name': 'Jerzy Knapik',
+
+        'title': 'Napiszę książkę',
+
+        'dsc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus, lectus ac maximus accumsan, nulla diam ultricies augue, nec efficitur erat enim at ipsum. Sed. '
+
+    },
+
+    {
+
+        'id': '4',
+
+        'name': 'Jerzy Knapik',
+
+        'title': 'Napiszę książkę',
+
+        'dsc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus, lectus ac maximus accumsan, nulla diam ultricies augue, nec efficitur erat enim at ipsum. Sed. '
+
+    },
+
+    {
+
+        'id': '5',
+
+        'name': 'Jerzy Knapik',
+
+        'title': 'Napiszę książkę',
+
+        'dsc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus, lectus ac maximus accumsan, nulla diam ultricies augue, nec efficitur erat enim at ipsum. Sed. '
+
+    },
+
+    {
+
+        'id': '6',
+
+        'name': 'Jerzy Knapik',
+
+        'title': 'Napiszę książkę',
+
+        'dsc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus, lectus ac maximus accumsan, nulla diam ultricies augue, nec efficitur erat enim at ipsum. Sed. '
+
+    },
+
+    {
+
+        'id': '7',
+
         'name': 'Jerzy Olchowicz',
 
         'title': 'Zrobię naleśniki',
